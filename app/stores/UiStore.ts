@@ -410,6 +410,9 @@ class UiStore {
       this.secondaryRightSidebar = panel;
     } else {
       this.rightSidebar = panel;
+      // Persist every change, including closing, so a reload restores the
+      // latest state rather than whichever panel was open at the last save.
+      this.persist();
     }
   };
 
